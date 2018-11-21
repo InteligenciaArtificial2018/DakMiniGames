@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DakMiniGames</string>
+    <string name="txtPortada">Dak MiniGames</string>
+    <string name="txtIniciar">Iniciar</string>
+    <string name="txtAcercaDe">Acerca De</string>
+    <string name="txtCompartir">Compartir</string>
+    <string name="txtGramatica">Gramatica</string>
+    <string name="txtTriviaCultural">Trivia cultural</string>
+    <string name="txtInglesEspanol">Ingles - Español</string>
+    <string name="title_activity_gramatica">Gramatica</string>
+</resources>
