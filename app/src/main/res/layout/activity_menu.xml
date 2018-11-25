@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Menu" android:orientation="vertical" android:scrollbars="vertical">
+
+    <Button
+            android:text="@string/txtGramatica"
+            android:layout_width="match_parent"
+            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/btnGramatica"
+            android:background="@color/colorAccent"/>
+    <Button
+            android:text="@string/txtTriviaCultural"
+            android:layout_width="match_parent"
+            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/btnTriviaCultural"
+            android:background="@color/colorAccent2"/>
+    <Button
+            android:text="@string/txtInglesEspanol"
+            android:layout_width="match_parent"
+            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/btnInglesEspanol"
+            android:background="@color/colorAccent"/>
+    <Button
+            android:text="Button"
+            android:layout_width="match_parent"
+            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/button16" android:background="@color/colorAccent2"/>
+    <Button
+            android:text="Button"
+            android:layout_width="match_parent"
+            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/button17" android:background="@color/colorAccent"/>
+    <Button
+            android:text="Button"
+            android:layout_width="match_parent"
+            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/button18" android:background="@color/colorAccent2"/>
+</LinearLayout>
