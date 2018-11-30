@@ -40,5 +40,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         */
+        btnIniciar.setOnClickListener {
+            val intent = Intent(this, Menu::class.java)
+            startActivity(intent)
+        }
     }
 }

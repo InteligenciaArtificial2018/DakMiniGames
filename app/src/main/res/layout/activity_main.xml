@@ -25,26 +25,30 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintHorizontal_bias="0.514" android:layout_marginTop="50dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtPortada" android:background="@color/colorAccent"/>
+            app:layout_constraintTop_toBottomOf="@+id/txtPortada" android:background="@color/colorAccent"
+            android:textColor="@android:color/background_light" android:fontFamily="casual"/>
     <Button
             android:text="@string/txtAcercaDe"
-            android:layout_width="0dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnAcercaDe"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/btnIniciar"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="24dp"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.024"
-            app:layout_constraintEnd_toStartOf="@+id/btnCompartir" android:background="@color/colorAccent"/>
+            android:background="@color/colorAccent"
+            android:textColor="@android:color/background_light"
+            android:fontFamily="casual" tools:layout_marginRight="@dimen/cinco" app:barrierAllowsGoneWidgets="false"/>
     <Button
             android:text="@string/txtCompartir"
-            android:layout_width="0dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnCompartir" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="24dp"
-            app:layout_constraintStart_toEndOf="@+id/btnAcercaDe"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/btnIniciar"
-            app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="8dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.024"
-            android:background="@color/colorAccent"/>
+            android:background="@color/colorAccent" android:textColor="@android:color/background_light"
+            android:fontFamily="casual" app:layout_constraintStart_toEndOf="@+id/btnAcercaDe"
+            android:layout_marginStart="8dp"/>
 
 </android.support.constraint.ConstraintLayout>

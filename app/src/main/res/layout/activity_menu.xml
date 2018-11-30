@@ -12,32 +12,40 @@
             android:layout_width="match_parent"
             android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
             tools:layout_editor_absoluteX="16dp" android:id="@+id/btnGramatica"
-            android:background="@color/colorAccent"/>
+            android:background="@color/colorAccent" android:textColor="@android:color/background_light"
+            android:fontFamily="casual"/>
     <Button
             android:text="@string/txtTriviaCultural"
             android:layout_width="match_parent"
             android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
             tools:layout_editor_absoluteX="16dp" android:id="@+id/btnTriviaCultural"
-            android:background="@color/colorAccent2"/>
+            android:background="@color/design_default_color_primary"
+            android:textColor="@android:color/background_light" android:fontFamily="casual"/>
     <Button
             android:text="@string/txtInglesEspanol"
             android:layout_width="match_parent"
             android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
             tools:layout_editor_absoluteX="16dp" android:id="@+id/btnInglesEspanol"
-            android:background="@color/colorAccent"/>
+            android:background="@color/colorAccent" android:textColor="@android:color/background_light"
+            android:fontFamily="casual"/>
     <Button
             android:text="Button"
             android:layout_width="match_parent"
             android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
-            tools:layout_editor_absoluteX="16dp" android:id="@+id/button16" android:background="@color/colorAccent2"/>
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/button16"
+            android:background="@color/design_default_color_primary"
+            android:textColor="@android:color/background_light" android:fontFamily="casual"/>
     <Button
             android:text="Button"
             android:layout_width="match_parent"
             android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
-            tools:layout_editor_absoluteX="16dp" android:id="@+id/button17" android:background="@color/colorAccent"/>
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/button17" android:background="@color/colorAccent"
+            android:textColor="@android:color/background_light" android:fontFamily="casual"/>
     <Button
             android:text="Button"
             android:layout_width="match_parent"
             android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
-            tools:layout_editor_absoluteX="16dp" android:id="@+id/button18" android:background="@color/colorAccent2"/>
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/button18"
+            android:background="@color/design_default_color_primary"
+            android:textColor="@android:color/background_light" android:fontFamily="casual"/>
 </LinearLayout>

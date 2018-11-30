@@ -1,5 +1,6 @@
 package com.example.dakaro.dakminigames
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -32,6 +33,8 @@ class Gramatica : AppCompatActivity() {
         respuestitasCorrectitas.add(pregunta1.respuestaCorrecta)
         respuestitasCorrectitas.add(pregunta2.respuestaCorrecta)
         respuestitasCorrectitas.add(pregunta3.respuestaCorrecta)
+
+        respuestitasRepetiditas.clear()
 
         fun generarAleatorio(): Int {
             val random = Random()
@@ -119,17 +122,17 @@ class Gramatica : AppCompatActivity() {
             if(respuesta == pregunta1.respuestaCorrecta){
                 myNum = Integer.parseInt(tvPuntaje.text.toString())
                 myNum += 2
-                tvPuntaje.text = myNum.toString()
+                tvPuntaje.text = "puntaje: $myNum "
                 generarPregunta()
             }else if (respuesta == pregunta2.respuestaCorrecta){
                 myNum = Integer.parseInt(tvPuntaje.text.toString())
                 myNum += 2
-                tvPuntaje.text = myNum.toString()
+                tvPuntaje.text = "puntaje: $myNum "
                 generarPregunta()
             }else if (respuesta == pregunta3.respuestaCorrecta){
                 myNum = Integer.parseInt(tvPuntaje.text.toString())
                 myNum += 2
-                tvPuntaje.text = myNum.toString()
+                tvPuntaje.text = "puntaje: $myNum "
                 generarPregunta()
             }else{
                 tvPuntaje.text = 0.toString()
