@@ -1,12 +1,15 @@
 package com.example.dakaro.dakminigames
 
-import android.annotation.SuppressLint
+import android.media.MediaPlayer
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.view.View
 
 import android.widget.Button
 import android.widget.TextView
+import com.airbnb.lottie.LottieAnimationView
 import kotlinx.android.synthetic.main.activity_gramatica.*
 import java.util.Random
 
@@ -24,6 +27,8 @@ class Gramatica : AppCompatActivity() {
         var respuestita: String
         val respuestitasRepetiditas = mutableListOf<Int>() // lista mutable que nos da la posibilidad de ir rellenando la lista a medida que lo necesitemos
         val respuestitasCorrectitas = mutableListOf<String>()
+        val successito = findViewById<LottieAnimationView>(R.id.successito)
+
 
 
         val pregunta1 = PreguntasGramatica(1, "Espero que lo ____ escrito bien", "haya", "alla", "haiga", "haya")
@@ -37,6 +42,7 @@ class Gramatica : AppCompatActivity() {
         respuestitasRepetiditas.clear()
 
         fun generarAleatorio(): Int {
+
             val random = Random()
             val preguntaAleatoria = random.nextInt(4)
             if (preguntaAleatoria == 0){
@@ -71,6 +77,10 @@ class Gramatica : AppCompatActivity() {
         fun generarPregunta(){
 
             when(generarAleatorio()){
+                0 ->{
+                    generarPregunta()
+                }
+
                 1 ->{
                     tvPregunta.text = pregunta1.pregunta
                     btnRespuesta1.text = pregunta1.respuesta1
@@ -122,18 +132,31 @@ class Gramatica : AppCompatActivity() {
             if(respuesta == pregunta1.respuestaCorrecta){
                 myNum = Integer.parseInt(tvPuntaje.text.toString())
                 myNum += 2
-                tvPuntaje.text = "puntaje: $myNum "
+                successito.visibility = View.VISIBLE
+                successito.playAnimation()
+                for (x in 1..1000000)
+                tvPuntaje.text = myNum.toString()
                 generarPregunta()
+                successito.visibility = View.GONE
             }else if (respuesta == pregunta2.respuestaCorrecta){
                 myNum = Integer.parseInt(tvPuntaje.text.toString())
                 myNum += 2
-                tvPuntaje.text = "puntaje: $myNum "
+                successito.visibility = View.VISIBLE
+                successito.playAnimation()
+                for (x in 1..1000000)
+                tvPuntaje.text = myNum.toString()
                 generarPregunta()
+                successito.visibility = View.GONE
             }else if (respuesta == pregunta3.respuestaCorrecta){
                 myNum = Integer.parseInt(tvPuntaje.text.toString())
                 myNum += 2
-                tvPuntaje.text = "puntaje: $myNum "
+                successito.visibility = View.VISIBLE
+                successito.playAnimation()
+                for (x in 1..1000000)
+                tvPuntaje.text = myNum.toString()
                 generarPregunta()
+                successito.visibility = View.GONE
+
             }else{
                 tvPuntaje.text = 0.toString()
                 respuestitasRepetiditas.clear()

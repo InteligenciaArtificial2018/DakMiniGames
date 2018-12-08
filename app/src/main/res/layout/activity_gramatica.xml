@@ -21,15 +21,15 @@
     <Button
             android:text="Button"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="52dp"
             android:id="@+id/btnRespuesta3"
             app:layout_constraintTop_toBottomOf="@+id/btnRespuesta2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp" android:layout_marginTop="4dp" app:layout_constraintHorizontal_bias="0.0"
             android:background="@color/colorAccent" android:textColor="@android:color/background_light"
-            android:fontFamily="casual" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"/>
+            android:fontFamily="casual"
+    />
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
             app:lottie_imageAssetsFolder="assets"
             app:lottie_fileName="success.json"
             app:lottie_loop="false"
-            app:lottie_autoPlay="true"
+            app:lottie_autoPlay="false"
             android:layout_marginTop="44dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" tools:ignore="MissingConstraints"
             app:layout_constraintVertical_bias="0.0" android:layout_marginStart="8dp"

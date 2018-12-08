@@ -5,19 +5,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity" android:orientation="vertical">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txtPortada"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="50dp" app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/txtPortada" android:layout_marginBottom="70dp"
-            app:layout_constraintBottom_toTopOf="@+id/btnIniciar" android:fontFamily="casual" android:textSize="30sp"
-            app:layout_constraintVertical_chainStyle="spread_inside" android:textAlignment="center"
-            app:layout_constraintHorizontal_bias="0.502"/>
     <Button
             android:text="@string/txtIniciar"
             android:layout_width="0dp"
@@ -25,37 +14,41 @@
             android:id="@+id/btnIniciar"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintHorizontal_bias="0.514" android:layout_marginTop="50dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtPortada" android:background="@color/colorAccent"
-            android:textColor="@android:color/background_light" android:fontFamily="casual"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            android:background="@color/colorAccent"
+            android:textColor="@android:color/background_light" android:fontFamily="casual"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/imageView"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/btnAcercaDe"/>
     <Button
             android:text="@string/txtAcercaDe"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnAcercaDe"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/btnIniciar"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="24dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.024"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
             android:background="@color/colorAccent"
             android:textColor="@android:color/background_light"
-            android:fontFamily="casual" tools:layout_marginRight="@dimen/cinco"/>
+            android:fontFamily="casual" tools:layout_marginRight="@dimen/cinco" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnIniciar"
+            app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView" android:layout_marginEnd="9dp"
+            android:layout_marginBottom="9dp" app:layout_constraintBottom_toTopOf="@+id/lottieAnimationView"
+            app:layout_constraintHorizontal_bias="0.108"/>
     <Button
             android:text="@string/txtCompartir"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:id="@+id/btnCompartir" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="24dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/btnIniciar"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.024"
+            android:id="@+id/btnCompartir"
             android:background="@color/colorAccent" android:textColor="@android:color/background_light"
-            android:fontFamily="casual" app:layout_constraintStart_toEndOf="@+id/btnAcercaDe"
-            android:layout_marginStart="8dp"/>
+            android:fontFamily="casual"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnIniciar" android:layout_marginBottom="9dp"
+            app:layout_constraintBottom_toTopOf="@+id/lottieAnimationView"
+            app:layout_constraintStart_toEndOf="@+id/btnAcercaDe" android:layout_marginStart="51dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"/>
 
     <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="236dp"
-            android:layout_height="241dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="250dp"
+            android:layout_height="164dp"
+            android:layout_marginTop="8dp"
             app:lottie_imageAssetsFolder="assets"
             app:lottie_fileName="dino_dance.json"
             app:lottie_loop="true"
@@ -63,6 +56,16 @@
             app:layout_constraintTop_toBottomOf="@+id/btnAcercaDe" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintVertical_bias="0.975"/>
+            android:layout_marginStart="8dp" app:layout_constraintVertical_bias="1.0" android:orientation="vertical"
+            android:id="@+id/lottieAnimationView"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/logo"
+            android:id="@+id/imageView"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnIniciar" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.507"/>
 
 </android.support.constraint.ConstraintLayout>

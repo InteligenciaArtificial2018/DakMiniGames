@@ -3,6 +3,7 @@ package com.example.dakaro.dakminigames
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
+import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewCompat
@@ -18,10 +19,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnIniciar = findViewById<Button>(R.id.btnIniciar)
-        val txtPortada = findViewById<TextView>(R.id.txtPortada)
         var animatorX : ObjectAnimator
         val animatorY : ObjectAnimator
         val animatorSet : AnimatorSet
+        val mp = MediaPlayer.create(this, R.raw.melodyloops_the_first_light)
+        mp.start()
 
         /*
         val btnAcercaDe = findViewById<Button>(R.id.btnAcercaDe)
