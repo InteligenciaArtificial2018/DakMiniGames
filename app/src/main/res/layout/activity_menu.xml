@@ -25,7 +25,7 @@
             android:text="@string/txtInglesEspanol"
             android:layout_width="match_parent"
             android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
-            tools:layout_editor_absoluteX="16dp" android:id="@+id/btnInglesEspanol"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/btnTraduccion"
             android:background="@color/colorAccent" android:textColor="@android:color/background_light"
             android:fontFamily="casual"/>
     <Button
