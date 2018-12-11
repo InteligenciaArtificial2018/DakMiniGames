@@ -22,9 +22,11 @@
                 android:name=".Gramatica"
                 android:label="@string/title_activity_gramatica"
                 android:theme="@style/AppTheme.NoActionBar">
-                android:onClick="activateNum"   >
+            android:onClick="activateNum" >
         </activity>
         <activity android:name=".Puntaje">
+        </activity>
+        <activity android:name=".traduccion">
         </activity>
     </application>
 

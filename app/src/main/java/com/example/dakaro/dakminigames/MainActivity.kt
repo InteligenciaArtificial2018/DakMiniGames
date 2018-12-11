@@ -10,6 +10,7 @@ import android.support.v4.view.ViewCompat
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {

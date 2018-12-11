@@ -8,4 +8,9 @@
     <string name="txtTriviaCultural">Trivia cultural</string>
     <string name="txtInglesEspanol">Ingles - Español</string>
     <string name="title_activity_gramatica">Gramatica</string>
+    <string name="elcaercade">Aplicación desarrollada en android studio con el lenguaje
+                                de programación kotlin por Dakaro.
+
+
+                                Todos los derechos reservados @Dakarito's Inc.</string>
 </resources>

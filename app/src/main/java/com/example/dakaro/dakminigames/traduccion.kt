@@ -3,19 +3,17 @@ package com.example.dakaro.dakminigames
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-
 import android.widget.Button
 import android.widget.TextView
 import com.airbnb.lottie.LottieAnimationView
 import kotlinx.android.synthetic.main.activity_gramatica.*
-import java.util.Random
+import java.util.*
 
-// no se que pedo pero me corrigio un error en "respuesta"
-@Suppress("NAME_SHADOWING")
-class Gramatica : AppCompatActivity() {
+class traduccion : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gramatica)
+        setContentView(R.layout.activity_traduccion)
 
         val tvPregunta = findViewById<TextView>(R.id.tvPregunta)
         val tvPuntaje = findViewById<TextView>(R.id.tvPuntaje)
@@ -27,12 +25,11 @@ class Gramatica : AppCompatActivity() {
 
 
 
-        val pregunta1 = PreguntasGramatica(1, "Espero que lo ____ escrito bien", "haya", "alla", "haiga", "haya")
-        val pregunta2 = PreguntasGramatica(2, "La tierra tiene muchas ____", "capas", "capaz", "capases", "capas")
-        val pregunta3 = PreguntasGramatica(3, "___ no puedas mas, me llamas", "cuándo", "cuando", "quando", "cuando")
-        val pregunta4 =
-            PreguntasGramatica(4, "No se ____ así", "hiso", "izo", "hizo", "hizo")
-        val pregunta5 = PreguntasGramatica(5, "____ muchas quejas por el problema", "habían", "había", "abia", "había")
+        val pregunta1 = PreguntasTraduccion(1, "Repeat", "Repetir", "Respetar", "Esperar", "Repetir")
+        val pregunta2 = PreguntasTraduccion(2, "Wrong", "Directo", "Usual", "Equivocado", "Equivocado")
+        val pregunta3 = PreguntasTraduccion(3, "Show", "Ocultar", "Mostrar", "Visitar", "Mostrar")
+        val pregunta4 = PreguntasTraduccion(4, "Giggle", "Risa nerviosa", "Correr rapido", "Caerse", "Risa nerviosa")
+        val pregunta5 = PreguntasTraduccion(5, "Soon", "Pronto", "Soleado", "Sol", "Pronto")
 
         respuestitasCorrectitas.add(pregunta1.respuestaCorrecta)
         respuestitasCorrectitas.add(pregunta2.respuestaCorrecta)
@@ -201,5 +198,4 @@ class Gramatica : AppCompatActivity() {
             evaluarRespuesta(respuestita)
         }
     }
-
 }

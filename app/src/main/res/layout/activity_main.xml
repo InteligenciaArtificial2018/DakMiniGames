@@ -21,29 +21,17 @@
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/btnAcercaDe"/>
     <Button
             android:text="@string/txtAcercaDe"
-            android:layout_width="160dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnAcercaDe"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="12dp"
             android:background="@color/colorAccent"
             android:textColor="@android:color/background_light"
             android:fontFamily="casual" tools:layout_marginRight="@dimen/cinco" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/btnIniciar"
-            app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView" android:layout_marginEnd="9dp"
             android:layout_marginBottom="9dp" app:layout_constraintBottom_toTopOf="@+id/lottieAnimationView"
-            app:layout_constraintHorizontal_bias="0.108"/>
-    <Button
-            android:text="@string/txtCompartir"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnCompartir"
-            android:background="@color/colorAccent" android:textColor="@android:color/background_light"
-            android:fontFamily="casual"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/btnIniciar" android:layout_marginBottom="9dp"
-            app:layout_constraintBottom_toTopOf="@+id/lottieAnimationView"
-            app:layout_constraintStart_toEndOf="@+id/btnAcercaDe" android:layout_marginStart="51dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"/>
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
 
     <com.airbnb.lottie.LottieAnimationView
             android:layout_width="250dp"

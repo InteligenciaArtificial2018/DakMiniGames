@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import kotlinx.android.synthetic.main.activity_menu.*
 
 class Menu : AppCompatActivity() {
 
@@ -15,6 +16,10 @@ class Menu : AppCompatActivity() {
 
         btnGramatica.setOnClickListener {
             val intent = Intent(this, Gramatica::class.java)
+            startActivity(intent)
+        }
+        btnTraduccion.setOnClickListener {
+            val intent = Intent(this, traduccion::class.java)
             startActivity(intent)
         }
     }
