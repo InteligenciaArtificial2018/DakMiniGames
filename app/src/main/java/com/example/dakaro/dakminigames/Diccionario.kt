@@ -15,7 +15,7 @@ import kotlin.concurrent.thread
 
 // no se que pedo pero me corrigio un error en "respuesta"
 @Suppress("NAME_SHADOWING")
-class Gramatica : AppCompatActivity() {
+class Diccionario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gramatica)
@@ -30,8 +30,8 @@ class Gramatica : AppCompatActivity() {
 
 
 
-        val pregunta1 = PreguntasGramatica(1, "Espero que lo ____ escrito bien", "haya", "alla", "haiga", "haya")
-        val pregunta2 = PreguntasGramatica(2, "La tierra tiene muchas ____", "capas", "capaz", "capases", "capas")
+        val pregunta1 = PreguntasGramatica(1, "Concurrir", "Apreciar", "Asistir", "Despegar", "Asistir")
+        val pregunta2 = PreguntasGramatica(2, "Caminar", "Avisar", "Deambular", "Descansar", "Deambular")
         val pregunta3 = PreguntasGramatica(3, "___ no puedas mas, me llamas", "cuándo", "cuando", "quando", "cuando")
         val pregunta4 =
             PreguntasGramatica(4, "No se ____ así", "hiso", "izo", "hizo", "hizo")
@@ -150,18 +150,14 @@ class Gramatica : AppCompatActivity() {
             if(respuesta == pregunta1.respuestaCorrecta){
                 myNum = Integer.parseInt(tvPuntaje.text.toString())
                 myNum += 2
-                successito.visibility = View.VISIBLE
                 successito.playAnimation()
-                TimeUnit.MILLISECONDS.sleep(1466L)
 
                 tvPuntaje.text = myNum.toString()
                 generarPregunta()
             }else if (respuesta == pregunta2.respuestaCorrecta){
                 myNum = Integer.parseInt(tvPuntaje.text.toString())
                 myNum += 2
-                successito.visibility = View.VISIBLE
                 successito.playAnimation()
-                TimeUnit.MILLISECONDS.sleep(1466L)
 
 
                 tvPuntaje.text = myNum.toString()
@@ -170,9 +166,7 @@ class Gramatica : AppCompatActivity() {
             }else if (respuesta == pregunta3.respuestaCorrecta){
                 myNum = Integer.parseInt(tvPuntaje.text.toString())
                 myNum += 2
-                successito.visibility = View.VISIBLE
                 successito.playAnimation()
-                TimeUnit.MILLISECONDS.sleep(1466L)
 
                 tvPuntaje.text = myNum.toString()
                 

@@ -10,42 +10,35 @@
     <Button
             android:text="@string/txtGramatica"
             android:layout_width="match_parent"
-            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
+            android:layout_height="102dp" tools:layout_editor_absoluteY="29dp"
             tools:layout_editor_absoluteX="16dp" android:id="@+id/btnGramatica"
             android:background="@color/colorAccent" android:textColor="@android:color/background_light"
             android:fontFamily="casual"/>
     <Button
-            android:text="@string/txtTriviaCultural"
+            android:text="@string/txtDiccionario"
             android:layout_width="match_parent"
-            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
-            tools:layout_editor_absoluteX="16dp" android:id="@+id/btnTriviaCultural"
-            android:background="@color/design_default_color_primary"
-            android:textColor="@android:color/background_light" android:fontFamily="casual"/>
+            android:layout_height="95dp" tools:layout_editor_absoluteY="29dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/btnDiccionario"
+            android:background="@color/ic_launcher_background"
+            android:textColor="?attr/actionMenuTextColor" android:fontFamily="casual"/>
     <Button
             android:text="@string/txtInglesEspanol"
             android:layout_width="match_parent"
-            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
+            android:layout_height="102dp" tools:layout_editor_absoluteY="29dp"
             tools:layout_editor_absoluteX="16dp" android:id="@+id/btnTraduccion"
             android:background="@color/colorAccent" android:textColor="@android:color/background_light"
             android:fontFamily="casual"/>
     <Button
-            android:text="Button"
+            android:text="@string/txtSinonimos"
             android:layout_width="match_parent"
-            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
-            tools:layout_editor_absoluteX="16dp" android:id="@+id/button16"
-            android:background="@color/design_default_color_primary"
-            android:textColor="@android:color/background_light" android:fontFamily="casual"/>
+            android:layout_height="102dp" tools:layout_editor_absoluteY="29dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/btnSinonimos"
+            android:background="@color/ic_launcher_background"
+            android:textColor="?attr/actionMenuTextColor" android:fontFamily="casual"/>
     <Button
-            android:text="Button"
+            android:text="@string/txtAntonimos"
             android:layout_width="match_parent"
-            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
-            tools:layout_editor_absoluteX="16dp" android:id="@+id/button17" android:background="@color/colorAccent"
-            android:textColor="@android:color/background_light" android:fontFamily="casual"/>
-    <Button
-            android:text="Button"
-            android:layout_width="match_parent"
-            android:layout_height="67dp" tools:layout_editor_absoluteY="29dp"
-            tools:layout_editor_absoluteX="16dp" android:id="@+id/button18"
-            android:background="@color/design_default_color_primary"
+            android:layout_height="102dp" tools:layout_editor_absoluteY="29dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/btnAntonimos" android:background="@color/colorAccent"
             android:textColor="@android:color/background_light" android:fontFamily="casual"/>
 </LinearLayout>

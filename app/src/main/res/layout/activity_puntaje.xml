@@ -8,14 +8,24 @@
         tools:context=".Puntaje">
 
     <TextView
-            android:text="su puntaje fue: "
-            android:layout_width="94dp"
-            android:layout_height="40dp"
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvRecord2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/tvRecord" android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvPuntos2"/>
+    <TextView
+            android:text="Su puntaje fue: "
+            android:layout_width="164dp"
+            android:layout_height="56dp"
             android:id="@+id/tvPuntos2" android:layout_marginTop="52dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tvPuntos" android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintHorizontal_bias="1.0"/>
+            app:layout_constraintHorizontal_bias="1.0" android:textSize="24sp"/>
     <Button
             android:text="REGRESAR"
             android:layout_width="0dp"
@@ -45,12 +55,12 @@
             android:layout_height="40dp"
             android:id="@+id/tvPuntos" android:layout_marginTop="52dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="124dp"/>
+            android:layout_marginEnd="72dp" android:textSize="24sp"/>
     <TextView
-            android:text="TextView"
+            android:text="Record"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvRecord" android:layout_marginStart="28dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="48dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvPuntos"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvPuntos" android:textSize="20sp"/>
 </android.support.constraint.ConstraintLayout>

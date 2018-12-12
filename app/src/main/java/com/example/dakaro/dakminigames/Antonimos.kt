@@ -15,7 +15,7 @@ import kotlin.concurrent.thread
 
 // no se que pedo pero me corrigio un error en "respuesta"
 @Suppress("NAME_SHADOWING")
-class Gramatica : AppCompatActivity() {
+class Antonimos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gramatica)

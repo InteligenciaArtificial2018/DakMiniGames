@@ -10,6 +10,7 @@ class Puntaje: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_puntaje)
 
         var tvPuntaje2 = findViewById<TextView>(R.id.tvPuntos)
@@ -24,7 +25,7 @@ class Puntaje: AppCompatActivity() {
             startActivity(intent)
         }
         btnRegresar.setOnClickListener {
-            val intent = Intent(this, Gramatica::class.java)
+            val intent = Intent(this, Menu::class.java)
             startActivity(intent)
         }
     }

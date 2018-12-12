@@ -22,5 +22,9 @@ class Menu : AppCompatActivity() {
             val intent = Intent(this, traduccion::class.java)
             startActivity(intent)
         }
+        btnSinonimos.setOnClickListener {
+            val intent = Intent(this, Sinonimos::class.java)
+            startActivity(intent)
+        }
     }
 }

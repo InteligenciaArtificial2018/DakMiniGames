@@ -28,6 +28,12 @@
         </activity>
         <activity android:name=".traduccion">
         </activity>
+        <activity android:name=".Sinonimos">
+        </activity>
+        <activity android:name=".Antonimos">
+        </activity>
+        <activity android:name=".Diccionario">
+        </activity>
     </application>
 
 </manifest>
