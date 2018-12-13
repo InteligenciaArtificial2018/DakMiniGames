@@ -5,12 +5,13 @@ import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 
-@Database(entities = [TGramatica::class], version = 2, exportSchema = false)
+@Database(entities = [TGramatica::class, TTraduccion::class], version = 4, exportSchema = false)
 abstract class DakMiniGamesDatabase: RoomDatabase() {
     /**
      * Este es un método abstracto que retorna el DAO para la base de datos.
      */
     abstract fun getTGramaticaDao(): TGramaticaDao
+    abstract fun getTTraduccionDao(): TTraduccionDao
 
     /**
      * Un patrón de diseño Singleton es utilizado para asegurarnos que
