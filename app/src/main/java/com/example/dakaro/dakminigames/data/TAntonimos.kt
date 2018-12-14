@@ -4,10 +4,10 @@ import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
-// Tabla TGramatica en donde se guardarán los campos necesarios
-// para el correcto funcionamiento de el minijuego "Gramatica"
-@Entity(tableName = "TGramatica")
-class TGramatica(
+// Tabla TAntonimos en donde se guardarán los campos necesarios
+// para el correcto funcionamiento de el minijuego "Antonimos"
+@Entity(tableName = "TAntonimos")
+class TAntonimos(
     // Columna "Pregunta"
     @ColumnInfo(name = "pregunta")
     var pregunta: String? = "",

@@ -3,63 +3,63 @@ package com.example.dakaro.dakminigames.data
 import android.arch.persistence.room.*
 
 @Dao
-interface TGramaticaDao {
+interface TAntonimosDao {
     /**
-     * Retorna todos las tuplas de TGramatica en orden ascendente.
+     * Retorna todos las tuplas de TAntonimos en orden ascendente.
      */
-    @Query("SELECT * FROM TGramatica ORDER BY id ASC")
-    fun getTGramaticaList(): List<TGramatica>
+    @Query("SELECT * FROM TAntonimos ORDER BY id ASC")
+    fun getTAntonimosList(): List<TAntonimos>
 
     /**
-     * Retorna el id de la tabla TGramatica
+     * Retorna el id de la tabla TAntonimos
      */
-    @Query("SELECT id FROM TGramatica where pregunta = :pregunta")
-    fun getTGramaticaId(pregunta:String): TGramatica
+    @Query("SELECT id FROM TAntonimos where pregunta = :pregunta")
+    fun getTAntonimosId(pregunta:String): TAntonimos
 
     /**
-     * Retorna la pregunta de la tabla TGramatica
+     * Retorna la pregunta de la tabla TAntonimos
      */
-    @Query("SELECT pregunta FROM TGramatica WHERE id = :id")
-    fun getTGramaticaPregunta(id: Int): TGramatica
+    @Query("SELECT pregunta FROM TAntonimos WHERE id = :id")
+    fun getTAntonimosPregunta(id: Int): TAntonimos
 
     /**
-     * Retorna la respuesta 1 de la tabla TGramatica
+     * Retorna la respuesta 1 de la tabla TAntonimos
      */
-    @Query("SELECT respuesta1 FROM TGramatica WHERE id = :id")
-    fun getTGramaticarespuesta1(id: Int): TGramatica
+    @Query("SELECT respuesta1 FROM TAntonimos WHERE id = :id")
+    fun getTAntonimosrespuesta1(id: Int): TAntonimos
     /**
-     * Retorna la respuesta 2 de la tabla TGramatica
+     * Retorna la respuesta 2 de la tabla TAntonimos
      */
-    @Query("SELECT respuesta2 FROM TGramatica WHERE id = :id")
-    fun getTGramaticarespuesta2(id: Int): TGramatica
+    @Query("SELECT respuesta2 FROM TAntonimos WHERE id = :id")
+    fun getTAntonimosrespuesta2(id: Int): TAntonimos
     /**
-     * Retorna la respuesta 3 de la tabla TGramatica
+     * Retorna la respuesta 3 de la tabla TAntonimos
      */
-    @Query("SELECT respuesta3 FROM TGramatica WHERE id = :id")
-    fun getTGramaticarespuesta3(id: Int): TGramatica
+    @Query("SELECT respuesta3 FROM TAntonimos WHERE id = :id")
+    fun getTAntonimosrespuesta3(id: Int): TAntonimos
     /**
-     * Retorna la respuesta correcta de la tabla TGramatica
+     * Retorna la respuesta correcta de la tabla TAntonimos
      */
-    @Query("SELECT respuestaCorrecta FROM TGramatica WHERE id = :id")
-    fun getTGramaticarespuestaCorrecta(id: Int): TGramatica
+    @Query("SELECT respuestaCorrecta FROM TAntonimos WHERE id = :id")
+    fun getTAntonimosrespuestaCorrecta(id: Int): TAntonimos
     /**
-     * Inserta una nueva tupla en la tabla TGramatica.
-     * @param TGramatica la tupla a insertar en la tabla.
+     * Inserta una nueva tupla en la tabla TAntonimos.
+     * @param tAntonimos la tupla a insertar en la tabla.
      */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun saveTGramatica(TGramatica: TGramatica)
+    fun saveTAntonimos(tAntonimos: TAntonimos)
 
     /**
-     * Actualiza una tupla en la tabla TGramatica.
-     * @param TGramatica el valor de la tupla a actualizar.
+     * Actualiza una tupla en la tabla TAntonimos.
+     * @param tAntonimos el valor de la tupla a actualizar.
      */
     @Update
-    fun updateTGramatica(TGramatica: TGramatica)
+    fun updateTAntonimos(tAntonimos: TAntonimos)
 
     /**
-     * Remueve una tupla de la tabla TGramatica.
-     * @param tGramatica el valor de la tupla a remover.
+     * Remueve una tupla de la tabla TAntonimos.
+     * @param tAntonimos el valor de la tupla a remover.
      */
     @Delete
-    fun deleteTGramatica(tGramatica: TGramatica)
+    fun deleteTAntonimos(tAntonimos: TAntonimos)
 }

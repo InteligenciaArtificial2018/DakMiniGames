@@ -28,7 +28,7 @@ class TGramatica(
     @ColumnInfo(name = "respuestaCorrecta")
     var respuestaCorrecta: String? = "",
 
-    // Columna "respuestaCorrecta"
+    // Columna "activo"
     @ColumnInfo(name = "activo")
     var activo: Boolean? = true)
     {

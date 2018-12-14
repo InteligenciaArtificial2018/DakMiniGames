@@ -3,63 +3,63 @@ package com.example.dakaro.dakminigames.data
 import android.arch.persistence.room.*
 
 @Dao
-interface TGramaticaDao {
+interface TSinonimosDao {
     /**
-     * Retorna todos las tuplas de TGramatica en orden ascendente.
+     * Retorna todos las tuplas de TSinonimos en orden ascendente.
      */
-    @Query("SELECT * FROM TGramatica ORDER BY id ASC")
-    fun getTGramaticaList(): List<TGramatica>
+    @Query("SELECT * FROM TSinonimos ORDER BY id ASC")
+    fun getTSinonimosList(): List<TSinonimos>
 
     /**
-     * Retorna el id de la tabla TGramatica
+     * Retorna el id de la tabla TSinonimos
      */
-    @Query("SELECT id FROM TGramatica where pregunta = :pregunta")
-    fun getTGramaticaId(pregunta:String): TGramatica
+    @Query("SELECT id FROM TSinonimos where pregunta = :pregunta")
+    fun getTSinonimosId(pregunta:String): TSinonimos
 
     /**
-     * Retorna la pregunta de la tabla TGramatica
+     * Retorna la pregunta de la tabla TSinonimos
      */
-    @Query("SELECT pregunta FROM TGramatica WHERE id = :id")
-    fun getTGramaticaPregunta(id: Int): TGramatica
+    @Query("SELECT pregunta FROM TSinonimos WHERE id = :id")
+    fun getTSinonimosPregunta(id: Int): TSinonimos
 
     /**
-     * Retorna la respuesta 1 de la tabla TGramatica
+     * Retorna la respuesta 1 de la tabla TSinonimos
      */
-    @Query("SELECT respuesta1 FROM TGramatica WHERE id = :id")
-    fun getTGramaticarespuesta1(id: Int): TGramatica
+    @Query("SELECT respuesta1 FROM TSinonimos WHERE id = :id")
+    fun getTSinonimosrespuesta1(id: Int): TSinonimos
     /**
-     * Retorna la respuesta 2 de la tabla TGramatica
+     * Retorna la respuesta 2 de la tabla TSinonimos
      */
-    @Query("SELECT respuesta2 FROM TGramatica WHERE id = :id")
-    fun getTGramaticarespuesta2(id: Int): TGramatica
+    @Query("SELECT respuesta2 FROM TSinonimos WHERE id = :id")
+    fun getSinonimosrespuesta2(id: Int): TSinonimos
     /**
-     * Retorna la respuesta 3 de la tabla TGramatica
+     * Retorna la respuesta 3 de la tabla TSinonimos
      */
-    @Query("SELECT respuesta3 FROM TGramatica WHERE id = :id")
-    fun getTGramaticarespuesta3(id: Int): TGramatica
+    @Query("SELECT respuesta3 FROM TSinonimos WHERE id = :id")
+    fun getTSinonimosrespuesta3(id: Int): TSinonimos
     /**
-     * Retorna la respuesta correcta de la tabla TGramatica
+     * Retorna la respuesta correcta de la tabla TSinonimos
      */
-    @Query("SELECT respuestaCorrecta FROM TGramatica WHERE id = :id")
-    fun getTGramaticarespuestaCorrecta(id: Int): TGramatica
+    @Query("SELECT respuestaCorrecta FROM TSinonimos WHERE id = :id")
+    fun getTSinonimosrespuestaCorrecta(id: Int): TSinonimos
     /**
-     * Inserta una nueva tupla en la tabla TGramatica.
-     * @param TGramatica la tupla a insertar en la tabla.
+     * Inserta una nueva tupla en la tabla TSinonimos.
+     * @param TSinonimos la tupla a insertar en la tabla.
      */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun saveTGramatica(TGramatica: TGramatica)
+    fun saveTSinonimos(TSinonimos: TSinonimos)
 
     /**
-     * Actualiza una tupla en la tabla TGramatica.
-     * @param TGramatica el valor de la tupla a actualizar.
+     * Actualiza una tupla en la tabla TSinonimos.
+     * @param tSinonimos el valor de la tupla a actualizar.
      */
     @Update
-    fun updateTGramatica(TGramatica: TGramatica)
+    fun updateTSinonimos(tSinonimos: TSinonimos)
 
     /**
-     * Remueve una tupla de la tabla TGramatica.
-     * @param tGramatica el valor de la tupla a remover.
+     * Remueve una tupla de la tabla TSinonimos.
+     * @param tSinonimos el valor de la tupla a remover.
      */
     @Delete
-    fun deleteTGramatica(tGramatica: TGramatica)
+    fun deleteTSinonimos(tSinonimos: TSinonimos)
 }

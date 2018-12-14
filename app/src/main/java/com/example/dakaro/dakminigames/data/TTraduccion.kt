@@ -26,7 +26,11 @@ class TTraduccion(
 
     // Columna "respuestaCorrecta"
     @ColumnInfo(name = "respuestaCorrecta")
-    var respuestaCorrecta: String? = "")
+    var respuestaCorrecta: String? = "",
+
+    // Columna "activo"
+    @ColumnInfo(name = "activo")
+    var activo: Boolean? = true)
     {
         // llave primaria "id"
         @PrimaryKey(autoGenerate = true)
