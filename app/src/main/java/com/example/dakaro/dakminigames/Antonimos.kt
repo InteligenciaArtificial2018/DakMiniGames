@@ -64,16 +64,16 @@ class Antonimos : AppCompatActivity() {
         val pregunta19 = TAntonimos("Escatimar", "colocar", "inventar", "derrochar", "derrochar", true)
         val pregunta20 = TAntonimos("Alto", "ancho", "bajo", "angosto", "bajo", true)
         val pregunta21 = TAntonimos("Macizo", "intrincado", "evidente", "débil", "débil", true)
+        val pregunta22 = TAntonimos("Impedir", "facilitar", "reprender", "trazar", "facilitar", true)
 
         otralista = listOf(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9, pregunta10,
-            pregunta11, pregunta12, pregunta13, pregunta14, pregunta15, pregunta16, pregunta17, pregunta18, pregunta19, pregunta20, pregunta21)
+            pregunta11, pregunta12, pregunta13, pregunta14, pregunta15, pregunta16, pregunta17, pregunta18, pregunta19, pregunta20, pregunta21, pregunta22)
 
         listarepetidas.clear()
 
-        val tamaño = otralista.count()
         //Toast.makeText(this, tamaño.toString(), Toast.LENGTH_SHORT).show()
 
-        for (x in 0 until tamaño-1){
+        for (x in 0 until otralista.count() - 1){
             otralista[x].id = x
             dakDatabase?.getTantonimosDao()?.saveTAntonimos(otralista[x])
             dakDatabase?.getTantonimosDao()?.updateTAntonimos(otralista[x])
@@ -132,8 +132,8 @@ class Antonimos : AppCompatActivity() {
 
         fun evaluarRespuesta(respuesta: String){
 
-            var myNum = 0
-            for (x in 0 until tamaño - 1){
+            var myNum: Int
+            for (x in 0 until otralista.count() - 1){
                 if (respuesta == otralista[x].respuestaCorrecta){
                     myNum = Integer.parseInt(tvPuntaje.text.toString())
                     myNum += 5

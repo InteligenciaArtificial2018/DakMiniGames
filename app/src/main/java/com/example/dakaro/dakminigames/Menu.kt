@@ -19,7 +19,7 @@ class Menu : AppCompatActivity() {
             startActivity(intent)
         }
         btnTraduccion.setOnClickListener {
-            val intent = Intent(this, traduccion::class.java)
+            val intent = Intent(this, Traduccion::class.java)
             startActivity(intent)
         }
         btnSinonimos.setOnClickListener {

@@ -5,7 +5,7 @@ import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 
-@Database(entities = [TGramatica::class, TTraduccion::class, TSinonimos::class, TAntonimos::class, TDiccionario::class], version = 11, exportSchema = false)
+@Database(entities = [TGramatica::class, TTraduccion::class, TSinonimos::class, TAntonimos::class, TDiccionario::class], version = 14, exportSchema = false)
 abstract class DakMiniGamesDatabase: RoomDatabase() {
     /**
      * Este es un método abstracto que retorna el DAO para la base de datos.

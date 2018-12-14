@@ -1,28 +1,29 @@
 package com.example.dakaro.dakminigames
 
+// librerias necesarias para el funcionamiento correcto de la app
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-
 import android.widget.Button
 import android.widget.TextView
 import com.airbnb.lottie.LottieAnimationView
 import com.example.dakaro.dakminigames.data.DakMiniGamesDatabase
 import com.example.dakaro.dakminigames.data.TDiccionario
-import com.example.dakaro.dakminigames.data.TGramatica
-import kotlinx.android.synthetic.main.activity_diccionario.*
-import kotlinx.android.synthetic.main.activity_gramatica.*
 import java.util.Random
 
-// no se que pedo pero me corrigio un error en "respuesta"
+// no se pero me corrigió un error en "respuesta"
 @Suppress("NAME_SHADOWING")
 class Diccionario : AppCompatActivity() {
+
+    // variable de tipo base de datos la cual nos servirá para acceder a la misma.
     private var dakDatabase: DakMiniGamesDatabase? = null
-    var gramaticaList: List<TDiccionario>? = ArrayList<TDiccionario>()
-    var gramaticaLocalList: List<TDiccionario>? = ArrayList<TDiccionario>()
-    var otralista: List<TDiccionario> = ArrayList<TDiccionario>()
-    var listarepetidas = mutableListOf<Int>()
-    var ipuntaje = -5
+
+    // Listas necesarias para la evaluación e inserción de preguntas.
+    private var gramaticaList: List<TDiccionario>? = ArrayList()
+    private var otralista: List<TDiccionario> = ArrayList()
+    private var listarepetidas = mutableListOf<Int>()
+    private var ipuntaje = -5
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diccionario)
@@ -38,84 +39,109 @@ class Diccionario : AppCompatActivity() {
         val btnRespuesta2 = findViewById<Button>(R.id.btnRespuesta2)
         val btnRespuesta3 = findViewById<Button>(R.id.btnRespuesta3)
         var respuestita: String
-        val preguntasRepetiditas = mutableListOf<TGramatica>() // lista mutable que nos da la posibilidad de ir rellenando la lista a medida que lo necesitemos
         val successito = findViewById<LottieAnimationView>(R.id.successito)
 
-        val pregunta1 = TDiccionario( "Espero que lo ____ escrito bien", "haya", "alla", "haiga", "haya", true)
-        val pregunta2 = TDiccionario( "La tierra tiene muchas ____", "capas", "capaz", "capases", "capas", true)
-        val pregunta3 = TDiccionario( "___ no puedas mas, me llamas", "cuándo", "cuando", "quando", "cuando", true)
-        val pregunta4 = TDiccionario( "No se ____ así", "hiso", "izo", "hizo", "hizo", true)
-        val pregunta5 = TDiccionario("____ muchas quejas por el problema", "habían", "había", "abia", "había", true)
-        val pregunta6 = TDiccionario("___ muchos libros para que leas","alli", "hay", "ay", "hay", true)
-        val pregunta7 = TDiccionario("dibuja una __- con el lápiz","raya", "raia", "ralla", "raya", true)
-        val pregunta8 = TDiccionario("¡__ no!, ya es muy tarde", "o", "ho", "oh", "oh", true)
-        val pregunta9 = TDiccionario("no sé si ___ bebidas frías", "ahí", "ay", "hay", "hay", true)
-        val pregunta10 = TDiccionario("an reforzado el ___ del río","cause", "cauce", "cauze", "cauce", true)
-        val pregunta11 = TDiccionario("le otorgaron el título de ___", "varón", "barón", "Baron", "barón", true)
-        val pregunta12 = TDiccionario("te avisaé cuando ___ listo", "esté", "este", "estare", "esté", true)
-        val pregunta13 = TDiccionario("no entiendo el ___ de las cosas", "porqué", "por qué", "porque", "porqué", true)
-        val pregunta14 = TDiccionario("el agua corre en el ___", "arrollo", "arroyo", "arrullo", "arroyo", true)
-        val pregunta15 = TDiccionario("yo ___ que no dice la verdad", "sé", "se", "c", "sé", true)
-        val pregunta16 = TDiccionario("casi me ___ a llorar", "echo", "hecho", "écho", "echo", true)
+        // Almacenamos la lista de tipo TGramatica en una variable
+        val pregunta1 = TDiccionario( "Estimar el mérito de personas o cosas", "pactar", "apreciar", "despedir", "apreciar", true)
+        val pregunta2 = TDiccionario( "inclinación a hacer el bien, comportamiento virtuoso", "bondad", "intriga", "perspicacia", "bondad", true)
+        val pregunta3 = TDiccionario( "Desear con exceso una cosa", "amparar", "ansiar", "colindar", "ansiar", true)
+        val pregunta4 = TDiccionario( "abundancia o riqueza excesiva de bienes", "impotencia", "segregaciòn", "opulencia", "opulencia", true)
+        val pregunta5 = TDiccionario("Recetar el uso de un medicamento o remedio", "prescribir", "repetir", "desistir", "prescribir", true)
+        val pregunta6 = TDiccionario("Que dura y permanece para siempre","altanero", "impetuoso", "perpetuo", "perpetuo", true)
+        val pregunta7 = TDiccionario("Que se produce por azar, fuera de lo previsto","accidental", "pulcro", "complejo", "accidental", true)
+        val pregunta8 = TDiccionario("Que no tiene manchas o suciedad", "limpio", "afable", "alegre", "limpio", true)
+        val pregunta9 = TDiccionario("Terminar en un periodo de tiempo", "estimular", "expirar", "estrujar", "expirar", true)
+        val pregunta10 = TDiccionario("Que causa desgracia o va acompañado de ella","asequible", "intrínseco", "nefasto", "nefasto", true)
+        val pregunta11 = TDiccionario("Camino que uno se propone seguir", "cresta", "intersección", "rumbo", "rumbo", true)
+        val pregunta12 = TDiccionario("catástrofe con numerosas víctimas y pérdidas", "exacerbación", "travesía", "hecatombe", "hecatombe", true)
+        val pregunta13 = TDiccionario("Limitar un derecho o voluntad", "eximir", "estimular", "coartar", "coartar", true)
+        val pregunta14 = TDiccionario("Que no está de acuerdo", "superficial", "incongruente", "equilibrado", "incongruente", true)
+        val pregunta15 = TDiccionario("Capacidad para entender las cosas con rapidez", "perspicacia", "imprudencia", "embuste", "perspicacia", true)
+        val pregunta16 = TDiccionario("Que es comprensivo, de buena voluntad", "voluble", "benévolo", "vano", "benévolo", true)
         val pregunta17 = TDiccionario("¿te ___ con ese dinero?", "basta", "básta", "vasta", "basta", true)
-        val pregunta18 = TDiccionario("el libro ___ sobre la cama", "cayo", "calló", "cayó", "cayó", true)
-        val pregunta19 = TDiccionario("le ___ dado una buena noticia", "haz", "as", "has", "has", true)
-        val pregunta20 = TDiccionario("estoy ___ de tanto trabajar", "desecho", "deshecho", "desesho", "deshecho", true)
-        val pregunta21 = TDiccionario("estoy ___ de tanto trabajar", "desecho", "deshecho", "desesho", "deshecho", true)
+        val pregunta18 = TDiccionario("Que pesa poco", "atroz", "ligero", "recio", "ligero", true)
+        val pregunta19 = TDiccionario("causa o razón de algo", "motivo", "molde", "monto", "motivo", true)
+        val pregunta20 = TDiccionario("Conceder una cosa como recompensa", "otorgar", "esparcir", "preservar", "otorgar", true)
+        val pregunta21 = TDiccionario("Que abusa de su superioridad", "déspota", "lícito", "ecuánime", "déspota", true)
+        val pregunta22 = TDiccionario("Que agrada a los sentidos", "intrínseco", "bello", "impune", "bello", true)
 
+        // Agregamos cada pregunta en una lista no mutable para una mejor evaluacion de los datos
         otralista = listOf(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9, pregunta10,
-            pregunta11, pregunta12, pregunta13, pregunta14, pregunta15, pregunta16, pregunta17, pregunta18, pregunta19, pregunta20, pregunta21)
+            pregunta11, pregunta12, pregunta13, pregunta14, pregunta15, pregunta16, pregunta17, pregunta18, pregunta19, pregunta20, pregunta21, pregunta22)
 
+        // Empezamos con una lista de preguntas repetidas vacía
         listarepetidas.clear()
 
-        val tamaño = otralista.count()
-        //Toast.makeText(this, tamaño.toString(), Toast.LENGTH_SHORT).show()
+        // Recorremos la lista desde 0 hasta la cantidad de datos dentro de la misma -1
+        // le restamos 1 porque el indice de una lista empieza en 0
+        for (x in 0 until otralista.count()-1){
 
-        for (x in 0 until tamaño-1){
+            // Dentro de la lista almacenamos el id segun el indice, ejemplo:
+            // indice 1 = Pregunta 1
+            // luego lo guardamos en la base de datos y por ultimo la actualizamos
             otralista[x].id = x
             dakDatabase?.getTDiccionarioDao()?.saveTDiccionario(otralista[x])
             dakDatabase?.getTDiccionarioDao()?.updateTDiccionario(otralista[x])
         }
 
-        val eliminado = TGramatica("hola", "hola1", "hola2", "hola3", "hola")
 
-
+        // guardamos en una lista todos los campos de la Tabla ya que esto
+        // nos facilita trabajarlos
         gramaticaList = dakDatabase?.getTDiccionarioDao()?.getTDiccionarioList()
 
-        //Toast.makeText(this, gramaticaList?.get(tamanolista)?.id.toString(), Toast.LENGTH_SHORT).show()
-
+        // Función generarAleatorio lo qe hace es generar un numero aleatoriamente entre el rango de 0 - 21
         fun generarAleatorio(): Int {
+
+            // variable ipuntaje lleva un control de el puntaje del usuario sin la necesidad
+            // de traerlo de otra función
             ipuntaje += 5
+
+            // Cuando el puntaje sea 100 entonces el usuario habra ganado el minijuego
             if (ipuntaje == 100){
-                var punt = tvPuntaje.text.toString()
+                val punt = tvPuntaje.text.toString()
+
+                // enviamos un intent con un mensaje de ganador y la puntuación obtenida
                 val intent = Intent(this, Puntaje::class.java)
                 intent.putExtra("ganador", "Felicidades! contestaste todas las preguntas correctamente")
                 // intent.putExtra()
                 intent.putExtra("puntos", punt)
                 startActivity(intent)
             }
+
+            // Generamos el numero aleatorio
             val random = Random()
 
-            val preguntaAleatoria = random.nextInt(20)
+            // Lambda, esto permitió contar una lista mutable
+            // distinto a 100 para que siempre se cumpla
+            val preguntaAleatoria = random.nextInt(21)
             val repetidas = listarepetidas.count { it != 100}
             for (x in 0 until repetidas){
 
+                // Evalúa si la pregunta aleatoria es o no es repetida
                 if(preguntaAleatoria == listarepetidas[x]){
+
+                    // se resta 5 al puntaje ya que con recursividad llamaremos a la misma clase
+                    // y esta sumará 5 aunque no haya contestado ninguna pregunta
                     ipuntaje -= 5
                     return generarAleatorio()
                 }
             }
-            if (otralista[preguntaAleatoria].activo == false){
+
+            // Otro metodo para la verificación de preguntas repetidas es mediante el campo "activo"
+            // el cual se convierte en falso cuando la pregunta nunca ha salido al juego, cuando esa
+            // pregunta regrese ahora su campo "activo" sera falso y por ende no se mostrará
+            return if (otralista[preguntaAleatoria].activo == false){
                 ipuntaje -= 5
-                return generarAleatorio()
-            }
-            else{
+                generarAleatorio()
+            } else{
                 otralista[preguntaAleatoria].activo = false
                 listarepetidas.add(otralista[preguntaAleatoria].id!!)
-                return preguntaAleatoria
+                preguntaAleatoria
             }
         }
 
+        // La función generarPregunta ingresa los campos de la pregunta aleatoria obtenida a los
+        // TextView y Buttons de nuestro layout, estos los trae tabla.
         fun generarPregunta(){
             val aleatorio = generarAleatorio()
             tvPregunta.text = gramaticaList?.get(aleatorio)?.pregunta.toString()
@@ -124,30 +150,47 @@ class Diccionario : AppCompatActivity() {
             btnRespuesta3.text = gramaticaList?.get(aleatorio)?.respuesta3.toString()
         }
 
+        // Inicializamos el puntaje en 0
         tvPuntaje.text = 0.toString()
 
+        // La función evaluarRespuesta recibe como parametro la respuesta de el usuario
+        // es la encargada de evaluar si la respuesta es correcta o no y de incrementar
+        // el puntaje segun los aciertos.
         fun evaluarRespuesta(respuesta: String){
 
-            var myNum = 0
-            for (x in 0 until tamaño - 1){
+            var myNum:Int
+
+            // recorremos la lista
+            for (x in 0 until otralista.count() - 1){
+
+                // si la respuesta escogida por el usuario concuerda con la respuesta
+                // correcta de la pregunta entonces incrementara el puntaje y genera
+                // una nueva pregunta
                 if (respuesta == otralista[x].respuestaCorrecta){
                     myNum = Integer.parseInt(tvPuntaje.text.toString())
                     myNum += 5
+
+                    // Succesito es nuestra animación de check la cual se inicia al
+                    // acertar la respuesta
                     successito.playAnimation()
                     tvPuntaje.text = myNum.toString()
                     return generarPregunta()
                 }
             }
 
+
+            // si escoge la respuesta equivocada se le envará al layout de puntaje y
+            // indicandole cual fue su puntaje total.
             myNum = Integer.parseInt(tvPuntaje.text.toString())
             val intent = Intent(this, Puntaje::class.java)
             intent.putExtra("puntos", myNum.toString())
             startActivity(intent)
         }
 
-        // aqui viene lo chidooo!
+        // aqui viene lo chidooo! a corre nuestra aplicación ;)
         generarPregunta()
 
+        // captamos cual fue la seleccion del usuario y la enviamos a evaluarRespuesta
         btnRespuesta1.setOnClickListener {
             respuestita = btnRespuesta1.text.toString()
             evaluarRespuesta(respuestita)

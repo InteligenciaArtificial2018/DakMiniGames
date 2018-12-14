@@ -26,13 +26,15 @@
         </activity>
         <activity android:name=".Puntaje">
         </activity>
-        <activity android:name=".traduccion">
+        <activity android:name=".Traduccion">
         </activity>
         <activity android:name=".Sinonimos">
         </activity>
         <activity android:name=".Antonimos">
         </activity>
         <activity android:name=".Diccionario">
+        </activity>
+        <activity android:name=".AcercaDe">
         </activity>
     </application>
 

@@ -25,7 +25,6 @@ class Gramatica : AppCompatActivity() {
     private var listarepetidas = mutableListOf<Int>()
     private var ipuntaje = -5
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gramatica)

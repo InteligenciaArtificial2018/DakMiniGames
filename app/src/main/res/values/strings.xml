@@ -11,4 +11,10 @@
     <string name="txtTriviaCultural">Trivia cultural</string>
     <string name="txtInglesEspanol">Ingles - Español</string>
     <string name="title_activity_gramatica">Gramatica</string>
+    <string name="Acercade">Aplicacion DakMiniGames desarrollada para la clase de Inteligecia Artificial impartida por el Ing. Hector Sabillón se agradece
+        por impartir la clase y a mis compañeros por ayudarme y animarme :)
+        att: Dakarito
+    </string>
+    <string name="txtPuedes">¿Puedes hacer a Dino bailar? gana un juego para ello ;)</string>
+
 </resources>

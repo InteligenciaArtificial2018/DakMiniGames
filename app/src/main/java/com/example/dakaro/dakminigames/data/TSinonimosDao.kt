@@ -47,7 +47,7 @@ interface TSinonimosDao {
      * @param TSinonimos la tupla a insertar en la tabla.
      */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun saveTSinonimos(TSinonimos: TSinonimos)
+    fun saveTSinonimos(tSinonimos: TSinonimos)
 
     /**
      * Actualiza una tupla en la tabla TSinonimos.

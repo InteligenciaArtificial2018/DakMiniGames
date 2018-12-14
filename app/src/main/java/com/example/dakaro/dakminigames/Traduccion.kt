@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_gramatica.*
 import java.util.*
 import kotlin.collections.ArrayList
 
-class traduccion : AppCompatActivity() {
+class Traduccion : AppCompatActivity() {
     private var dakDatabase: DakMiniGamesDatabase? = null
     var traduccionList: List<TTraduccion>? = ArrayList()
     var otralista: List<TTraduccion> = ArrayList()
@@ -55,16 +55,17 @@ class traduccion : AppCompatActivity() {
         val pregunta19 = TTraduccion("remove", "renovar", "rellenar", "quitar", "quitar", true)
         val pregunta20 = TTraduccion("remote", "invisible", "lejano", "cercano", "lejano", true)
         val pregunta21 = TTraduccion("shallow", "superficial", "oculto", "allegre", "superficial", true)
+        val pregunta22 = TTraduccion("Essay", "estafa", "ensayo", "estadio", "ensayo", true)
 
         otralista = listOf(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9, pregunta10,
-            pregunta11, pregunta12, pregunta13, pregunta14, pregunta15, pregunta16, pregunta17, pregunta18, pregunta19, pregunta20, pregunta21)
+            pregunta11, pregunta12, pregunta13, pregunta14, pregunta15, pregunta16, pregunta17, pregunta18, pregunta19, pregunta20, pregunta21, pregunta22)
 
         listarepetidas.clear()
 
-        val tamaño = otralista.count()
+
         //Toast.makeText(this, tamaño.toString(), Toast.LENGTH_SHORT).show()
 
-        for (x in 0 until tamaño-1){
+        for (x in 0 until otralista.count()-1){
             otralista[x].id = x
             dakDatabase?.getTTraduccionDao()?.saveTTraduccion(otralista[x])
             dakDatabase?.getTTraduccionDao()?.updateTTraduccion(otralista[x])
@@ -86,7 +87,7 @@ class traduccion : AppCompatActivity() {
             }
             val random = Random()
 
-            val preguntaAleatoria = random.nextInt(20)
+            val preguntaAleatoria = random.nextInt(21)
             val repetidas = listarepetidas.count { it != 100}
             for (x in 0 until repetidas){
 
@@ -119,7 +120,7 @@ class traduccion : AppCompatActivity() {
         fun evaluarRespuesta(respuesta: String){
 
             var myNum: Int
-            for (x in 0 until tamaño - 1){
+            for (x in 0 until otralista.count() - 1){
                 if (respuesta == otralista[x].respuestaCorrecta){
                     myNum = Integer.parseInt(tvPuntaje.text.toString())
                     myNum += 5
