@@ -102,7 +102,7 @@ class Diccionario : AppCompatActivity() {
 
                 // enviamos un intent con un mensaje de ganador y la puntuación obtenida
                 val intent = Intent(this, Puntaje::class.java)
-                intent.putExtra("ganador", "Felicidades! contestaste todas las preguntas correctamente")
+                intent.putExtra("ganador", "Felicidades! contestaste todas las preguntas correctamente, Bailalo Dino!!")
                 // intent.putExtra()
                 intent.putExtra("puntos", punt)
                 startActivity(intent)

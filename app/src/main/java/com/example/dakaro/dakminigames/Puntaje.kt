@@ -20,14 +20,14 @@ class Puntaje: AppCompatActivity() {
 
         val tvPuntaje2 = findViewById<TextView>(R.id.tvPuntos)
         val succesito = findViewById<LottieAnimationView>(R.id.successito)
-        val mp = MediaPlayer.create(this, R.raw.home1)
+        val mp2 = MediaPlayer.create(this, R.raw.home1)
 
         val bundle = intent.extras
         val puntos = bundle?.getString("puntos")!!
         val ganador = bundle?.getString("ganador")
 
         if (puntos == 100.toString()){
-            mp.start()
+            mp2.start()
             tvPuntaje2.text = puntos
             tvRecord.text = ganador
             succesito.visibility = View.VISIBLE
@@ -45,14 +45,13 @@ class Puntaje: AppCompatActivity() {
             }
         }
 
-
         btnSalir.setOnClickListener {
-            mp.stop()
+            mp2.stop()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         btnRegresar.setOnClickListener {
-            mp.stop()
+            mp2.stop()
             val intent = Intent(this, Menu::class.java)
             startActivity(intent)
         }

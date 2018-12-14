@@ -78,9 +78,9 @@ class Traduccion : AppCompatActivity() {
         fun generarAleatorio(): Int {
             ipuntaje += 5
             if (ipuntaje == 100){
-                var punt = tvPuntaje.text.toString()
+                val punt = tvPuntaje.text.toString()
                 val intent = Intent(this, Puntaje::class.java)
-                intent.putExtra("ganador", "Felicidades! contestaste todas las preguntas correctamente")
+                intent.putExtra("ganador", "Felicidades! contestaste todas las preguntas correctamente, Bailalo Dino!!")
                 // intent.putExtra()
                 intent.putExtra("puntos", punt)
                 startActivity(intent)
@@ -96,14 +96,13 @@ class Traduccion : AppCompatActivity() {
                     return generarAleatorio()
                 }
             }
-            if (otralista[preguntaAleatoria].activo == false){
+            return if (otralista[preguntaAleatoria].activo == false){
                 ipuntaje -= 5
-                return generarAleatorio()
-            }
-            else{
+                generarAleatorio()
+            } else{
                 otralista[preguntaAleatoria].activo = false
                 listarepetidas.add(otralista[preguntaAleatoria].id!!)
-                return preguntaAleatoria
+                preguntaAleatoria
             }
         }
 

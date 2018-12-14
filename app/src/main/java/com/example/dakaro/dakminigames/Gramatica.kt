@@ -99,7 +99,7 @@ class Gramatica : AppCompatActivity() {
                 val intent = Intent(this, Puntaje::class.java)
 
                 // enviamos un intent con un mensaje de ganador y la puntuación obtenida
-                intent.putExtra("ganador", "Felicidades! contestaste todas las preguntas correctamente")
+                intent.putExtra("ganador", "Felicidades! contestaste todas las preguntas correctamente, Bailalo Dino!!")
                 intent.putExtra("puntos", punt)
                 startActivity(intent)
             }

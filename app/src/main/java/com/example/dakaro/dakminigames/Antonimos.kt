@@ -93,7 +93,7 @@ class Antonimos : AppCompatActivity() {
             if (ipuntaje == 100){
                 var punt = tvPuntaje.text.toString()
                 val intent = Intent(this, Puntaje::class.java)
-                intent.putExtra("ganador", "Felicidades! contestaste todas las preguntas correctamente")
+                intent.putExtra("ganador", "Felicidades! contestaste todas las preguntas correctamente, Bailalo Dino!!")
                 // intent.putExtra()
                 intent.putExtra("puntos", punt)
                 startActivity(intent)
